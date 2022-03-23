@@ -1,0 +1,98 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'blog/css/blog.css'%}" />
+{% endblock %}
+
+{% block title %}Blog | Train&Develop{% endblock %}
+{% block content %}
+<main>
+  <div class="contenedor blog-block">
+    <h1>Train&Develop Blog</h1>
+
+    <div class="blog">
+      <section class="main-news item1">
+        <div class="m-news">
+          <div class="m-item1">
+            {% for post in posts %}
+            {% if forloop.counter > 0 and forloop.counter < 2 %} <div class="m-new-img">
+              {% if post.image %}
+              <img src="{{post.image.url}}" alt="" />
+              {% else %}
+              <img src="" alt="">
+              {% endif %}
+          </div>
+          <div class="m-new-text">
+            <p>{{post.text}}</p>
+          </div>
+          {% endif %}
+          {% endfor %}
+        </div>
+        <div class="m-item2">
+          {% for post in posts %}
+          {% if forloop.counter > 1 and forloop.counter < 4 %} <div class="m-new">
+            <div class="m-new-img">
+              {% if post.image %}
+              <img src="{{post.image.url}}" alt="" />
+              {% else %}
+              <img src="" alt="">
+              {% endif %}
+            </div>
+            <div class="m-new-text">
+              <p>{{post.text}}</p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+  </div>
+  </section>
+
+  <section class="latest-news item2">
+    <h5>Latest News</h5>
+
+    <div class="l-news">
+      {% for post in posts %}
+      {% if forloop.counter > 3 and forloop.counter < 10 %} 
+      <div class="l-new">
+        {% if post.image %}
+        <img src="{{post.image.url}}" alt="" />
+        {% else %}
+        <img src="" alt="">
+        {% endif %}
+        <div class="l-new-text">
+          <h6>{{post.title}}</h6>
+          {% load i18n %}
+          {% language 'en' %}
+          <blockquote>{{post.date}}</blockquote>
+          {% endlanguage %}
+          <p>{{post.text}}</p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+  </section>
+
+  <section class="product-news item3">
+    <h5>Product News</h5>
+    <div class="p-news">
+      {% for post in posts %}
+      {% if forloop.counter > 9 and forloop.counter < 13 %} 
+      <div class="p-new">
+        <h6>{{post.title}}</h6>
+        {% load i18n %}
+        {% language 'en' %}
+        <blockquote>{{post.date}}</blockquote>
+        {% endlanguage %}
+        <p>{{post.text}}</p>
+      </div>
+    {% endif %}
+    {% endfor %}
+    </div>
+  </section>
+  </div>
+  </div>
+</main>
+
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "home/base.html" %} {% load static %} {% block title %}Results |
+Train&Develop{% endblock %} {% block estilos %}
+<link rel="stylesheet" href="{% static 'courses/css/courses.css'%}" />
+{% endblock %} {% block header-text %}{% endblock %} {% block content %}
+
+<main>
+    <section class="results-search-block">
+        <div class="contenedor results-search-cont">
+            <div class="filter-results">
+                <h4>Filter by</h4>
+                <div class="filters"><div class="filter-type">
+                        <div class="filter-text">
+                            <h6>Categories</h6>
+                        </div>
+                        <div class="filter-checkboxs" id="category">
+                            {% for category in categories %}
+                            <div class="filter-checkbox">
+                                <input type="checkbox" id="{{category}}">
+                                <label for="{{category}}">{{category}}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div><div class="filter-type">
+                        <div class="filter-text">
+                            <h6>Author</h6>
+                        </div>
+                        <div class="filter-checkboxs" id="author">
+                            {% for author in authors %}
+                            <div class="filter-checkbox">
+                                <input type="checkbox" id="{{author}}">
+                                <label for="{{author}}">{{author}}</label>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div><div class="filter-slide">
+                        <button id="slider"><img class="slider-img" src="{% static 'courses/img/courses/down-arrow.png'%}" alt=""></button>
+                    </div></div></div>
+
+            <div class="results-search">
+                <h4>{{cursos|length}} total results for "{{filter}}"</h4>
+                <div class="courses-nav-page">
+                    {% for i in cant_pages %}{% if forloop.counter == 1 %}<button class="btn-page btn-page-active" data-btn="{{forloop.counter}}">1</button>{% else %}<button class="btn-page" data-btn="{{forloop.counter}}">{{i}}</button>{% endif %}{% endfor %}
+                </div>
+                <div class="courses-cards-page">
+                    {% for curso in cursos %}
+                    {% if forloop.counter <= 10 %} 
+                        <div class="mode-results course-visible" data-course="{{forloop.counter}}" data-author="{{curso.author|cut:" "|cut:"," }}" data-category="{% for u in curso.category.all|dictsort:"category"  %}{{u|cut:" "|cut:","}}{% endfor %}">
+                    {% else %}
+                        <div class="mode-results course-novisible"  data-course="{{forloop.counter}}" data-author="{{curso.author|cut:" "|cut:"," }}" data-category="{% for u in curso.category.all|dictsort:"category"  %}{{u|cut:" "|cut:","}}{% endfor %}">
+                    {% endif %}
+                            <div class="results-card-img">
+                                <div class="shadow"></div>
+                                {% if curso.image %}
+                                <img src="{{curso.image.url}}" alt="" />
+                                {% else %}
+                                <img src="" alt="" />
+                                {% endif %}
+                            </div>
+                            <div class="results-card-text">
+                                <h6>{{curso.title}}</h6>
+                                <blockquote class="courses-card-author">{{curso.author}}</blockquote>
+                                <div>
+                                    {% for u in curso.category.all|dictsort:"category" %}
+                                    <h6 class="courses-card-category">
+                                        {{u}}
+                                    </h6>
+                                    {% endfor %}
+                                </div>
+                                <p class="courses-card-description">{{curso.description}}</p>
+                                <p class="courses-card-price {% if curso.price == 0.0%}price-free{% endif %}">{% if curso.price == 0.0%} FREE {% else %}{{curso.price}} US${% endif %}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="courses-nav-page">
+                    {% for i in cant_pages %}{% if forloop.counter == 1 %}<button class="btn-page btn-page-active" data-btn="{{forloop.counter}}">1</button>{% else %}<button class="btn-page" data-btn="{{forloop.counter}}">{{i}}</button>{% endif %}{% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block jquery %}
+<script src="{% static 'courses/js/results.js'%}"></script> {% endblock %}

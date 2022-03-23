@@ -1,0 +1,186 @@
+.top{
+    background-color: #8c00ff;
+}
+
+.top-content{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.top-img{
+    position: relative;
+    width: 60%;
+}
+
+
+.top-img > img{
+    padding-top: 30px;
+    display: block;
+    width: 100%;
+}
+
+.top-text{
+    width: 40%;
+    position: relative;
+}
+
+.top-text > h1{
+    padding-top: 30px;
+    padding-right: 10px;
+}
+
+.top-text > h1 > b{
+    color: rgb(255, 187, 0);
+}
+
+.top-back-text{
+    width: 10000px;
+    height: 100%;
+    background-color: #eee;
+    position: absolute;
+    right: 0;
+    z-index: 0;
+}
+
+.top-text > h1{
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+}
+
+
+.title{
+    color: hsl(209, 100%, 30%);
+    width: 100%;
+    text-align: center;
+    border-top: 3px solid #8c00ff;
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.sub-title{
+    text-align: center;
+    font-weight: 400;
+    border-bottom: 3px solid #8c00ff;
+    padding-bottom: 50px;
+}
+
+.aboutus {
+  background-color: #eee;
+  background-size: contain;
+}
+
+.aboutus-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutus-content > img {
+  width: 40%;
+  height: 40%;
+  animation: rotation 3s infinite alternate;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-5deg);
+  }
+
+  to {
+    transform: rotate(5deg);
+  }
+}
+
+.aboutus-textos > p {
+  font-weight: 500;
+  font-style: italic;
+  text-align: center;
+  line-height: 14px;
+  padding: 20px;
+  border-radius: 8%;
+}
+
+.reach{
+    background: #00ad9f;
+}
+
+.reach-textos{
+    padding-bottom: 50px;
+}
+
+.reach-textos .title{
+    color: #333;
+}
+
+.reach-textos .sub-title{
+    color: #fff;
+}
+
+.reach-datas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.reach-data{
+    font-family: "Rajdhani", sans-serif;
+    color: #fff;
+    padding: 0 40px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.reach-data > h5{
+    text-align: center;
+    color: #333;
+}
+
+@media screen and (max-width:900px) {
+    .top-text > h1{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .top-text > h1{
+        font-size: 40px;
+    }
+
+    .aboutus-content {
+        flex-direction: column;
+    }
+
+    .aboutus-content > img {
+        width: 50%;
+        height: 50%;
+    }
+
+}
+
+@media screen and (max-width:600px) {
+    .top-text > h1{
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:450px) {
+    .top-text > h1{
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:300px) {
+    h3 {
+        font-size: 30px;
+    }
+
+}

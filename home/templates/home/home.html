@@ -1,0 +1,120 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}Home | Train&Develop{% endblock %}
+
+
+{% block header-text %}
+<section class="header-textos">
+    <div class="contenedor header-text-cont">
+        <h1>TRAIN &<br><b>DEVELOP</b></h1>
+        <p>
+            Apprenticeships are a great way of increasin the skill set your
+            employers
+        </p>
+        <div class="header-boton">        
+            <a href="{% url 'About_Us' %}">FIND OUT MORE</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="contenedor free-cards">
+        <h3 class="titulo">Start learning with free courses</h3>
+        <h5>
+            Free online courses from the best universities and companies in the
+            world.
+        </h5>
+        <div class="cards">
+            {% for course in courses %}
+            <div class="card">
+                <div class="card-img">
+                    {% if course.image %}
+                    <img src="{{course.image.url}}" alt="" />
+                    {% else %}
+                    <img src="" alt="">
+                    {% endif %}
+                    <div class="open">
+                        <img src="{% static 'home/img/open.png' %}" alt="" />
+                        <p>Go to course</p>
+                    </div>
+                </div>
+                <div class="card-textos">
+                    <h5>{{course.title}}</h5>
+                    <p>{{course.description}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="results">
+        <div class="contenedor results-content">
+            <img src="{% static 'home/img/student.png' %}" alt="">
+            <div class="results-textos">
+                <h2>Student results on <b>Train</b>&<b>Develop</b></h2>
+                <p>
+                    87% of people who learn for professional development report career
+                    benefits, such as getting a promotion, receiving a raise, or
+                    starting a new career.
+                </p>
+                <blockquote>- Train&Develop Impact Report (2020)</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonios">
+        <div class="contenedor test-content">
+            <div class="testimonios-titulos">
+                <h2>From the Train&Develop Community</h2>
+                <h5>More than 87 million people already learn on Train&Develop.</h5>
+            </div>
+            <div class="students">
+                <div class="student">
+                    <img src="{% static 'home/img/face1.jpg' %}" alt="">
+                    <div class="id">
+                        <h4>Timothy Christian</h4>
+                        <h6>Student</h6>
+                    </div>
+                    <p>'It's great business to offer an online MBA that is a real MBA at an affordable price. This
+                        program is totally disrupting higher education.'</p>
+                </div>
+                <div class="student">
+                    <img src="{% static 'home/img/face3.jpg' %}" alt="">
+                    <div class="id">
+                        <h4>Natalie Johnson</h4>
+                        <h6>Software Developer</h6>
+                    </div>
+                    <p>'Recruiters saw my Professional Certificate on my LinkedIn profile. During the interview,
+                        they
+                        told me that they were impressed with the skills I learned. I got the job!'</p>
+                </div>
+                <div class="student">
+                    <img src="{% static 'home/img/face2.jpg' %}" alt="">
+                    <div class="id">
+                        <h4>Sarah Harris</h4>
+                        <h6>Web Developer</h6>
+                    </div>
+                    <p>'I started at stage zero. With Train&Develop I was able to start learning online and
+                        eventually
+                        accumulate enough knowledge and skills to transition into a well-paying career.'</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="join">
+        <div class="contenedor join-cont">
+            <img src="{% static 'home/img/join.jpg' %}" alt="">
+            <div class="join-textos gradient">
+                <h3>Take the next step toward your personal and professional goals with Train&Develop.</h3>
+                <p>Join now to receive personalized recommendations from the entire Train&Develop catalog.</p>
+                <button>Join for free</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

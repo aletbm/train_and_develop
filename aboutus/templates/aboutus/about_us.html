@@ -1,0 +1,113 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %} About us | Train&Develop{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'aboutus/css/aboutus.css'%}">
+{% endblock %}
+
+{% block header-text %}{% endblock %}
+
+{% block content %}
+
+<main>
+    <section class="top">
+        <div class="top-content">
+            <div class="top-text">
+                <div class="top-back-text"></div>
+                <h1>Improving <b>lives</b> through learning</h1>
+            </div>
+            <div class="top-img">
+                <div class="top-back-img"></div>
+                <img src="{% static 'aboutus/img/about-men.png'%}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="about-title">
+        <div class="contenedor">
+            <h3 class="title">The leading global online learning and teaching store</h3>
+            <h5 class="sub-title">By connecting students from around the world with the best instructors, Train&Develop
+                helps people
+                achieve their goals and pursue their dreams.</h5>
+        </div>
+    </section>
+
+    <section class="aboutus">
+        <div class="contenedor">
+            <div class="aboutus-content">
+                <img src="{% static 'aboutus/img/world.png'%}" alt="">
+                <div class="aboutus-textos">
+                    <p>
+                        "We believe <br>
+                        Learning is the source of human progress.<br><br>
+
+                        It has the power to transform our world<br>
+                        from illness to health,<br>
+                        from poverty to prosperity,<br>
+                        from conflict to peace.<br><br>
+
+                        It has the power to transform our lives<br>
+                        for ourselves,<br>
+                        for our families,<br>
+                        for our communities.<br><br>
+
+                        No matter who we are or where we are,<br>
+                        learning empowers us to change and grow<br>
+                        and redefine what’s possible.<br>
+                        That’s why access to the best learning is a right, not a privilege.<br><br>
+
+                        And that’s why Train&Develop is here.<br>
+                        We partner with the best institutions<br>
+                        to bring the best learning<br>
+                        to every corner of the world.<br><br>
+
+                        So that anyone, anywhere has the power to<br>
+                        transform their life through learning."<br><br>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="reach">
+        <div class="contenedor">
+            <div class="reach-textos">
+                <h3 class="title">Our global reach</h3>
+                <h5 class="sub-title">Train&Develop is the leading global online teaching and learning store, connecting
+                    students
+                    everywhere with the best teaching in the world.</h5>
+            </div>
+            <div class="reach-datas">
+                <div class="reach-data">
+                    <h3>44</h3>
+                    <h5>million students</h5>
+                </div>
+                <div class="reach-data">
+                    <h3>65000</h3>
+                    <h5>instructors</h5>
+                </div>
+                <div class="reach-data">
+                    <h3>183000</h3>
+                    <h5>courses</h5>
+                </div>
+                <div class="reach-data">
+                    <h3>594</h3>
+                    <h5>million course enrollments</h5>
+                </div>
+                <div class="reach-data">
+                    <h3>75</h3>
+                    <h5>languages</h5>
+                </div>
+                <div class="reach-data">
+                    <h3>8600+</h3>
+                    <h5>business customers</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

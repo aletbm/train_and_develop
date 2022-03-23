@@ -1,0 +1,7 @@
+Django==2.1.2
+django-heroku
+gunicorn
+python-decouple
+whitenoise
+Pillow
+dj_database_url

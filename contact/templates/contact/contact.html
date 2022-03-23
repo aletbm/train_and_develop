@@ -1,0 +1,104 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}Contact | Train&Develop{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'contact/css/contact.css'%}">
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+{% endblock %}
+
+{% block content %}
+
+{% if messages %}
+{% for message in messages %}
+<div class="alert {{message.tags}}">
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+    {{message}}
+</div>
+{% endfor %}
+{% endif %}
+
+
+<main>
+    <div class="contenedor contact-block">
+        <div class="mail-block">
+            <div class="mail-text">
+                <h1>Send us a message</h1>
+                <p>If you want to contact us, please leave us your personal information and details of your
+                    request.<br>All fields marked with an asterisk are required.</p>
+            </div>
+
+            <div class="mail-formulario">
+                <form method="POST">{% csrf_token %}
+                    <div class="campo">
+                        <label for="name">*Name</label>
+                        {{miForm.name}}
+                    </div>
+
+                    <div class="campo">
+                        <label for="correo">*E-mail</label>
+                        {{miForm.email}}
+                    </div>
+
+                    <div class="campo">
+                        <label for="cellphone">Cellphone</label>
+                        {{miForm.cell}}
+                    </div>
+
+                    <div class="campo">
+                        <label for="subject">Subject</label>
+                        {{miForm.asunto}}
+                    </div>
+
+                    <div class="campo campo-textarea">
+                        <label for="consulta">*Message</label>
+                        {{miForm.mensaje}}
+                    </div>
+
+                    <input type="submit" value="Send" id="btn-send">
+                </form>
+            </div>
+        </div>
+        <div class="map-phone-block">
+            <div class="map-block">
+                <div class="map-text">
+                    <h1>Find us</h1>
+                    <p>We love that you visit us!</p>
+                </div>
+                <div id='map' style='width: 100%; height: 400px; margin-top: 20px; @media screen and (max-width:450px) {width: 100%; height: 50px}'></div>
+                <script>
+                    mapboxgl.accessToken = "{{mapbox_access_token}}";
+                    const map = new mapboxgl.Map({
+                        container: 'map', // container ID
+                        style: 'mapbox://styles/aletbm95/cl0siehhk000x14nmtzkewn86', // style URL
+                        center: [-58.392305924189316, -34.60430127524505], // starting position [lng, lat]
+                        zoom: 14 // starting zoom
+                    });
+                    const marker1 = new mapboxgl.Marker()
+                        .setLngLat([-58.392305924189316, -34.60430127524505])
+                        .addTo(map);
+                </script>
+            </div>
+            <div class="phone-block">
+                <div class="phone-text">
+                    <h1>WhatsApp Train&Develop</h1>
+                    <p>It is one of the communication channels so that you can resolve your queries and concerns related
+                        to the service in a fast and agile way.</p>
+                </div>
+
+                <div class="numberphone">
+                    <img src="{% static 'contact/img/contact/wpp.png'%}" alt="">
+                    <h6>+541557000000</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
+
+{% block jquery %}
+    
+{% endblock %}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="{% static 'home/img/brain1.png' %}" type="image/png" sizes="32x32" />
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'home/css/home.css' %}" />
+  {% block estilos %}{% endblock %}
+  <script src="{% static 'home/js/jquery-3.6.0.min.js' %}"></script>
+</head>
+
+<body>
+  <header class="header-home">
+    <nav class="nav-web">
+      <div class="nav-icon">
+        <a href="{% url 'Home' %}"><img src="{% static 'home/img/brain1.png' %}" alt="" /></a>
+      </div>
+      <div class="nav-menu">
+        <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'Home' %}">Home</a>
+        <a class="{% if request.path|slice:':9' == '/courses/' %}active{% endif %}" href="{% url 'Courses' %}">Courses</a>
+        <a class="{% if request.path == '/about_us/' %}active{% endif %}" href="{% url 'About_Us' %}">About Train&Develop</a>
+        <a class="{% if request.path == '/blog/' %}active{% endif %}" href="{% url 'Blog' %}">Blog</a>
+        <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'Contact' %}">Contact</a>
+        <form action="/courses/results/" method="post">{% csrf_token %}
+          <div class="search">
+            <input class="search-img" required type="image" src="{% static 'home/img/search.png' %}" />
+            <input class="search-input" required type="text" name="search" placeholder="What do you want to learn?">
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <nav class="nav-mobile">
+      <div class="button-menu">
+        <button>
+          <img src="{% static 'home/img/menu.png' %}" alt="" /> Menu
+        </button>
+        <div class="nav-menu">
+          <a class="{% if request.path == '/' %}active{% endif %}" href="{% url 'Home' %}">Home</a>
+          <a class="{% if request.path|slice:':9' == '/courses/' %}active{% endif %}" href="{% url 'Courses' %}">Courses</a>
+          <a class="{% if request.path == '/about_us/' %}active{% endif %}" href="{% url 'About_Us' %}">About Train&Develop</a>
+          <a class="{% if request.path == '/blog/' %}active{% endif %}" href="{% url 'Blog' %}">Blog</a>
+          <a class="{% if request.path == '/contact/' %}active{% endif %}" href="{% url 'Contact' %}">Contact</a>
+          <form action="/courses/results/" method="post">{% csrf_token %}
+            <div class="search">
+              <input class="search-img" required type="image" src="{% static 'home/img/search.png' %}" />
+              <input class="search-input" required type="text" name="search" placeholder="What do you want to learn?">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="nav-icon">
+        <a href="{% url 'Home' %}"><img src="{% static 'home/img/brain1.png' %}" alt="" /></a>
+      </div>
+    </nav>
+
+    {% block header-text %}{% endblock %}
+  </header>
+
+  {% block content %} {% endblock %}
+
+  <footer>
+    <div class="contact-me">
+      <div class="contacto">
+        <h4>Contact Me</h4>
+        <div class="datos">
+          <div class="dato">
+            <h6>Email</h6>
+            <p>alexanderdaniel_rios@hotmail.com</p>
+          </div>
+          <div class="dato">
+            <h6>Phone</h6>
+            <p>1157734444</p>
+          </div>
+          <div class="dato">
+            <h6>Location</h6>
+            <p>Buenos Aires, Capital Federal</p>
+          </div>
+          <div class="dato">
+            <h6>GitHub</h6>
+            <p>github.com/aletbm</p>
+          </div>
+        </div>
+      </div>
+      <div class="titulo-final">
+        <div class="titulo-name">
+          <h5>&copy; AleTBM | Alexander Daniel Rios</h5>
+        </div>
+        <div class="redes">
+          <nav>
+            <a href="#"><img src="{% static 'home/img/facebook.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'home/img/linkedin.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'home/img/twitter2.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'home/img/yt.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'home/img/instagram.png' %}" alt="" /></a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {% block jquery %}{% endblock %}
+
+</body>
+
+</html>

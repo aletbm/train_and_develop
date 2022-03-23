@@ -1,0 +1,215 @@
+{% extends "home/base.html" %}
+
+{% load static %}
+
+{% block title %}Courses | Train&Develop{% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{% static 'courses/css/courses.css' %}">
+{% endblock %}
+
+{% block header-text %}{% endblock %}
+
+{% block content %}
+
+<main>
+    <section class="head-courses">
+        <div class="contenedor">
+            <div class="head-courses-back">
+                <div class="head-courses-texts">
+                    <div class="block-texts">
+                        <h4>An interesting learning</h4>
+                        <p>Skills for your present (and your future). Take your first steps with us.</p>
+                    </div>
+                </div>
+                <div class="head-courses-img">
+                    <img src="{% static 'courses/img/womenincourses.jpg'%}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses">
+        <div class="contenedor">
+            <div class="courses-titles">
+                <h2>A wide selection of courses</h2>
+                <h5>Choose from over 183,000 video and online courses with new content every month</h4>
+            </div>
+
+            <div class="courses-carrousel">
+                <div class="carrousel-buttons">
+                    <button class="carrousel-button-cat btn-active" data-filter="Python">Python</button>
+                    <button class="carrousel-button-cat" data-filter="Excel">Excel</button>
+                    <button class="carrousel-button-cat" data-filter="WD">Web development</button>
+                    <button class="carrousel-button-cat" data-filter="JS">JavaScript</button>
+                    <button class="carrousel-button-cat" data-filter="IS">Data Science</button>
+                    <button class="carrousel-button-cat" data-filter="AWS">AWS certification</button>
+                    <button class="carrousel-button-cat" data-filter="Design">Design</button>
+                </div>
+                <div class="courses-car-galery">
+                    <div class="courses-category category-visible" data-category="Python">
+                        <div class="courses-cat-text">
+                            <h4>Expand your career opportunities with Python</h3>
+                                <p>
+                                    Whether you work in machine learning or finance, or want to build your career in
+                                    data science or web development, Python is one of the most important skills you can
+                                    learn. Python's simple syntax is particularly suitable for desktop, web, and...</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_py%}<a class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></a>{% endfor %}{% for curso in cursos_py%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-category" data-category="Excel">
+                        <div class="courses-cat-text">
+                            <h4>Analyze and visualize data with Excel</h3>
+                                <p>
+                                    No matter what industry you work in, Microsoft Office Excel is a valuable
+                                    spreadsheet program for organizing and representing data. Excel offers functions,
+                                    formulas, and pivot tables to help you add and analyze large...</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_excel%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}{% for curso in cursos_excel%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-category" data-category="WD">
+                        <div class="courses-cat-text">
+                            <h4>Create websites and apps with web development</h3>
+                                <p>
+                                    The world of web development is as wide as the Internet itself. Much of our social
+                                    and professional life takes place on the Internet, which has fueled the creation of
+                                    new industries aimed at creating, managing and debugging the websites and
+                                    applications on which we depend more and more.</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_wd%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}{% for curso in cursos_wd%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-category" data-category="JS">
+                        <div class="courses-cat-text">
+                            <h4>Improve your software development skills with JavaScript</h3>
+                                <p>
+                                    JavaScript is one of the most widespread programming languages ​​in the world,
+                                    mainly because it is the backbone of interactive web applications. Also, JavaScript
+                                    is a great language for beginners, because it gives you the opportunity to write
+                                    code that does something visual, which is useful and...</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_js%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}{% for curso in cursos_js%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-category" data-category="IS">
+                        <div class="courses-cat-text">
+                            <h4>Lead data-driven decision making with data science</h3>
+                                <p>
+                                    Information sciences are everywhere. Data science best practices are enabling
+                                    companies to cut waste, automate computing, and analyze markets. Basically,
+                                    science...</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_ds%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}{% for curso in cursos_ds%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-category" data-category="AWS">
+                        <div class="courses-cat-text">
+                            <h4>Become a Cloud Computing Expert with AWS Certification</h3>
+                                <p>
+                                    As Amazon Web Services is an ever-evolving cloud ecosystem, it can be challenging to
+                                    keep up with new features and services from AWS. That is why obtaining an AWS
+                                    certification can be a fantastic...</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_aws%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}{% for curso in cursos_aws%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="courses-category" data-category="Design">
+                        <div class="courses-cat-text">
+                            <h4>Expand your creative skills with drawing</h3>
+                                <p>
+                                    As well as being the foundation on which most forms of art are built, drawing is
+                                    also a great way to relieve stress and fuel your inner creativity. Drawing teaches
+                                    us to be observers, to develop attention to detail and to...</p>
+                        </div>
+                        <div class="courses-cards">
+                            <div class="courses-slider">{% for curso in cursos_design%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}{% for curso in cursos_design%}<div class="courses-card"><div class="courses-card-img"><div class="shadow"><img src="{% static 'courses/img/open.png'%}" alt="" /><p>Go to course</p></div>{% if curso.image %}<img src="{{curso.image.url}}" alt="">{% else %}<img src="" alt="">{% endif %}</div><div class="courses-card-text"><h6>{{curso.title}}</h3><blockquote>{{curso.author}}</blockquote><p>{{curso.price}} US$</p></div></div>{% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="categories-block">
+        <div class="contenedor">
+            <div class="courses-categories">
+                <h4 class="categories-title">Main Categories</h4>
+                <form class="categories" action="/courses/results/" method="post">{% csrf_token %}
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Design"><img src="{% static 'courses/img/courses/categories/draw.png'%}" alt=""></button>
+                        </div>
+                        <h6>Design</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Web Development"><img src="{% static 'courses/img/courses/categories/dev.png'%}" alt=""></button>
+                        </div>
+                        <h6>Development</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Marketing"><img src="{% static 'courses/img/courses/categories/marketing.png'%}" alt=""></button>
+                        </div>
+                        <h6>Marketing</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="IT and Software"><img src="{% static 'courses/img/courses/categories/info.png'%}" alt=""></button>
+                        </div>
+                        <h6>IT and software</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Personal Development"><img src="{% static 'courses/img/courses/categories/personal.png'%}" alt=""></button>
+                        </div>
+                        <h6>Personal development</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Business"><img src="{% static 'courses/img/courses/categories/bussines.png'%}" alt=""></button>
+                        </div>
+                        <h6>Business</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Photography"><img src="{% static 'courses/img/courses/categories/camera.png'%}" alt=""></button>
+                        </div>
+                        <h6>Photography</h6>
+                    </div>
+
+                    <div class="category">
+                        <div class="category-img">
+                            <button name="category" value="Music"><img src="{% static 'courses/img/courses/categories/music.png'%}" alt=""></button>
+                        </div>
+                        <h6>Music</h6>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block jquery %}<script src="{% static 'courses/js/courses.js'%}"></script> {% endblock %}
