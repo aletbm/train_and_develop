@@ -1,4 +1,3 @@
 traindevelop/.env
 __pycache__
 db.sqlite3
-datadump.json
