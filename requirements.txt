@@ -1,7 +1,6 @@
 Django==2.1.2
-django-heroku
+psycopg2
 gunicorn
 python-decouple
 whitenoise
 Pillow
-dj_database_url
