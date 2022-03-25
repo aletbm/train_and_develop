@@ -1,4 +1,4 @@
-<div align="center"><img src="logo.png" width="300" /></div>
+<div align="center"><img src="static/logo.png" width="300" /></div>
 
 <h3 align="center">Plataforma ficticia de aprendizaje en línea.</h3>
 
