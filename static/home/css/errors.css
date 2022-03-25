@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #0097FF;
+    font-family: "Rajdhani", sans-serif;
+    color: #fff;
+}
+
+h1{
+    font-size: 60px;
+}
+
+.contenedor {
+    padding: 10px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+main{
+    width: 100%;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+main img{
+    transform: rotate(343deg);
+    opacity: 0.5;
+}
+
+.text{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+}
+
+.face{
+    text-align: end;
+    flex-basis: 40%;
+    font-size: 150px;
+    margin-right: 20px;
+}
+
+.info{
+    flex-basis: 60%;
+}
+
+.info > p {
+    margin-top: 10px;
+}
+
+.info > p > a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #1a1919;
+    padding: 0px 7px;
+    border-radius: 15px;
+}
+
+@media screen and (max-width:600px) {
+    main img{
+        width: 80%;
+        height: 80%;
+    }
+}

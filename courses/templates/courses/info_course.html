@@ -1,0 +1,130 @@
+{% extends "home/base.html" %} {% load static %} {% block title %}Information |
+Train&Develop{% endblock %} {% block estilos %}
+<link rel="stylesheet" href="{% static 'courses/css/courses.css'%}" />
+{% endblock %} {% block content %}
+
+<main>
+    <section class="info-data">
+        <div class="contenedor">
+            <div class="info-main">
+                <div class="info-title">
+                    <h2>{{curso.title}}</h2>
+                    <h6>{{curso.description}}</h6>
+                    <div class="info-features">
+                        <div class="info-rating">
+                            <div class="rating-stars">
+                                <p>4.5</p>
+                                <img class="rating-stars-img" src="{% static 'courses/img/courses/info/star.png' %}"
+                                    alt="" />
+                                <img class="rating-stars-img" src="{% static 'courses/img/courses/info/star.png' %}"
+                                    alt="" />
+                                <img class="rating-stars-img" src="{% static 'courses/img/courses/info/star.png' %}"
+                                    alt="" />
+                                <img class="rating-stars-img" src="{% static 'courses/img/courses/info/star.png' %}"
+                                    alt="" />
+                                <img class="rating-stars-img" src="{% static 'courses/img/courses/info/star-mid.png' %}"
+                                    alt="" />
+                                <p>(13 ratings)</p>
+                                <p>37 students</p>
+                            </div>
+                        </div>
+                        <div class="info-author">
+                            <p>Created by {{curso.author}}</p>
+                        </div>
+                        <div class="info-chr">
+                            <div class="chr"><img src="{% static 'courses/img/courses/info/updated.png' %}" alt="">
+                                <p>Ultima actualizacion: {% load i18n %}{% language 'en' %}{{curso.updated|date:"M d, Y"}}{% endlanguage %}</p>
+                            </div>
+                            <div class="chr"><img src="{% static 'courses/img/courses/info/world.png' %}" alt="">
+                                <p>English</p>
+                            </div>
+                            <div class="chr"><img src="{% static 'courses/img/courses/info/cc.png' %}" alt="">
+                                <p>English [automatic]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="info-carrito">
+                    <div class="info-carrito-img">
+                        <img src="{{curso.image.url}}" alt="">
+                    </div>
+                    <div class="info-carrito-text">
+                        <h3>{{curso.price}} US$</h3>
+                        <form class="info-carrito-btn" action="">
+                            <input type="submit" value="Add to Cart">
+                            <input type="submit" value="Buy Now">
+                        </form>
+                        <p>30 day money back guarantee</p>
+                        <div class="info-content-course">
+                            <h6>This course includes:</h6>
+                            <div class="content-char">
+                                <img src="{% static 'courses/img/courses/info/tv.png' %}" alt="">
+                                <p>7 hours of video on demand</p>
+                            </div>
+                            <div class="content-char">
+                                <img src="{% static 'courses/img/courses/info/download.png' %}" alt="">
+                                <p>7 downloadable resources</p>
+                            </div>
+                            <div class="content-char">
+                                <img src="{% static 'courses/img/courses/info/infinite.png' %}" alt="">
+                                <p>Lifetime access</p>
+                            </div>
+                            <div class="content-char">
+                                <img src="{% static 'courses/img/courses/info/movil.png' %}" alt="">
+                                <p>Access on mobile devices and TV</p>
+                            </div>
+                            <div class="content-char">
+                                <img src="{% static 'courses/img/courses/info/homework.png' %}" alt="">
+                                <p>Tasks</p>
+                            </div>
+                            <div class="content-char">
+                                <img src="{% static 'courses/img/courses/info/trophy.png' %}" alt="">
+                                <p>Certificate of completion</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="info-learn">
+        <div class="contenedor">
+            <div class="learn-block">
+                <div class="learn-content">
+                    <h4>What you will learn</h4>
+                    <div class="learn-objectives">
+                        {% for i in "x"|rjust:"14" %}
+                        <div class="objectives">
+                            <img src="{% static 'courses/img/courses/info/check.png' %}" alt="">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, vitae.</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="requirements">
+                <h4>Requirements</h4>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                    <li>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</li>
+                </ul>
+            </div>
+            <div class="description">
+                <h4>Description</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, officia repudiandae! Cupiditate natus, necessitatibus, officia libero obcaecati molestiae aliquid deserunt rem mollitia dolores debitis, laborum labore corrupti. Error nobis ipsum, atque cumque natus fugit reiciendis! Placeat eveniet fugit, veniam culpa repudiandae autem quaerat obcaecati. Eaque voluptatum officia harum recusandae! Iste aliquid repellat, sit sed sequi, laboriosam nam dolorem consectetur rem, velit laborum distinctio culpa. Quisquam deleniti, doloribus cum expedita sunt consequatur eius eaque inventore accusantium est dignissimos maiores rem ipsa illo reiciendis quo. <br><br> Laborum commodi dignissimos dolorum, expedita numquam reprehenderit at eius nobis exercitationem eos dolores doloremque consequatur quos voluptatem temporibus voluptatibus beatae possimus unde! Aliquam alias vitae dolorem consequuntur soluta nisi inventore rerum minima necessitatibus eveniet, tempora provident quo adipisci consectetur dolores facere praesentium voluptate iure natus perferendis iusto molestias. Eos assumenda rerum id at aliquid quibusdam dolore atque facere natus, dolores cumque. Ullam similique ea porro natus qui ipsa iure doloribus, rerum maxime expedita velit obcaecati architecto inventore mollitia et cupiditate ad id ratione voluptas facilis recusandae corrupti fuga fugit! Ab possimus blanditiis aperiam, autem fuga repudiandae obcaecati dolorum ratione libero quae labore. Aliquid eveniet aliquam ullam, accusantium enim quam reprehenderit pariatur ipsum, commodi, soluta mollitia maiores rerum.</p>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis corrupti eos qui maxime optio est dolorem nemo, ea laborum aliquid quod totam explicabo porro in cupiditate neque dolore accusamus officiis tenetur! Laboriosam id atque deserunt hic perspiciatis quam expedita optio deleniti! Ea voluptates in at, deleniti velit, sed repellendus repudiandae aliquam magni similique, aliquid itaque nisi? Doloremque minus numquam illo dolorem tempora quis dolores saepe at, ad adipisci eos voluptas minima quod, quae commodi enim nesciunt ea, nisi deleniti? Impedit soluta ab officiis non, dolore a dolores nulla adipisci nobis magnam iste provident eligendi, pariatur dicta, facilis ipsam facere est.</p>
+            </div>
+        </div>
+    </div>
+    </section>
+</main>
+
+{% endblock %}
+
+{% block jquery %}
+{% endblock %}

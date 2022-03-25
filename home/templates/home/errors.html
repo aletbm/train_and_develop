@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ERROR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'home/css/errors.css'%}">
+</head>
+
+<body>
+    <main class="contenedor">
+        <img src="{% static 'home/img/brain2.png'%}" alt="">
+        <div class="text">
+            <h1 class="face">:'(</h1>
+            <div class="info">
+                <h1>{{title}}</h1>
+                <h2>(Error {{status}})</h2>
+                <h3>{{msj}}</h3>
+                <p>Back to <a href="{% url 'Home' %}">Home</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

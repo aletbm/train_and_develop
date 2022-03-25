@@ -1,8 +1,8 @@
 {% extends "home/base.html" %} {% load static %} {% block title %}Results |
 Train&Develop{% endblock %} {% block estilos %}
 <link rel="stylesheet" href="{% static 'courses/css/courses.css'%}" />
-{% endblock %} {% block header-text %}{% endblock %} {% block content %}
-
+{% endblock %}
+{% block content %}
 <main>
     <section class="results-search-block">
         <div class="contenedor results-search-cont">
@@ -49,12 +49,18 @@ Train&Develop{% endblock %} {% block estilos %}
                         <div class="mode-results course-novisible"  data-course="{{forloop.counter}}" data-author="{{curso.author|cut:" "|cut:"," }}" data-category="{% for u in curso.category.all|dictsort:"category"  %}{{u|cut:" "|cut:","}}{% endfor %}">
                     {% endif %}
                             <div class="results-card-img">
-                                <div class="shadow"></div>
                                 {% if curso.image %}
                                 <img src="{{curso.image.url}}" alt="" />
                                 {% else %}
                                 <img src="" alt="" />
                                 {% endif %}
+                                <div class="shadow">
+                                    <form action="/courses/info_course/" method="GET">
+                                        <button><img src="{% static 'courses/img/open.png' %}" alt="" />
+                                        <p>Go to course</p></button>
+                                        <input type="hidden" name="n" value="{{curso.id}}">
+                                    </form>
+                                </div>
                             </div>
                             <div class="results-card-text">
                                 <h6>{{curso.title}}</h6>

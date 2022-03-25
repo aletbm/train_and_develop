@@ -37,10 +37,13 @@
                     {% else %}
                     <img src="" alt="">
                     {% endif %}
+                    <form action="/courses/info_course/" method="GET">
                     <div class="open">
-                        <img src="{% static 'home/img/open.png' %}" alt="" />
-                        <p>Go to course</p>
+                        <button><img src="{% static 'home/img/open.png' %}" alt="" />
+                        <p>Go to course</p></button>
+                        <input type="hidden" name="n" value="{{course.id}}">
                     </div>
+                    </form>    
                 </div>
                 <div class="card-textos">
                     <h5>{{course.title}}</h5>

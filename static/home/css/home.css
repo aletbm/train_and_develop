@@ -300,6 +300,11 @@ main {
   font-weight: 500;
 }
 
+.open > button{
+  border: none;
+  background: transparent;
+}
+
 .card:hover .open {
   transform: scale(1);
 }

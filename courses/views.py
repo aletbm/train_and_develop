@@ -82,3 +82,9 @@ def results(request):
             "cant_pages": cant_pages,
         },
     )
+
+def info_course(request):
+    if request.GET["n"]:
+        n = request.GET["n"]
+        curso = Course.objects.get(id=n)
+    return render(request, "courses/info_course.html", {"curso": curso})
