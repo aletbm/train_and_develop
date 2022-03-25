@@ -6,6 +6,12 @@ Train&Develop{% endblock %} {% block estilos %}
 <main>
     <section class="info-data">
         <div class="contenedor">
+            <div class="info-carrito">
+                    <div class="info-carrito-img">
+                        <img src="{{curso.image.url}}" alt="">
+                    </div>
+                    
+                </div>
             <div class="info-main">
                 <div class="info-title">
                     <h2>{{curso.title}}</h2>
@@ -44,47 +50,55 @@ Train&Develop{% endblock %} {% block estilos %}
                         </div>
                     </div>
                 </div>
-                <div class="info-carrito">
-                    <div class="info-carrito-img">
-                        <img src="{{curso.image.url}}" alt="">
-                    </div>
-                    <div class="info-carrito-text">
+                
+            </div>
+            <div class="info-carrito-text">
                         <h3>{{curso.price}} US$</h3>
                         <form class="info-carrito-btn" action="">
                             <input type="submit" value="Add to Cart">
                             <input type="submit" value="Buy Now">
+                            <p>30 day money back guarantee</p>
                         </form>
-                        <p>30 day money back guarantee</p>
-                        <div class="info-content-course">
-                            <h6>This course includes:</h6>
+                        <h6>This course includes:</h6>
+                        <div class="info-content-course"> 
                             <div class="content-char">
-                                <img src="{% static 'courses/img/courses/info/tv.png' %}" alt="">
+                                <div class="content-char-img">
+                                    <img src="{% static 'courses/img/courses/info/tv.png' %}" alt="">
+                                </div>
                                 <p>7 hours of video on demand</p>
                             </div>
                             <div class="content-char">
-                                <img src="{% static 'courses/img/courses/info/download.png' %}" alt="">
+                                <div class="content-char-img">
+                                    <img src="{% static 'courses/img/courses/info/download.png' %}" alt="">
+                                </div>
                                 <p>7 downloadable resources</p>
                             </div>
                             <div class="content-char">
-                                <img src="{% static 'courses/img/courses/info/infinite.png' %}" alt="">
+                                <div class="content-char-img">
+                                    <img src="{% static 'courses/img/courses/info/infinite.png' %}" alt="">
+                                </div>
                                 <p>Lifetime access</p>
                             </div>
                             <div class="content-char">
-                                <img src="{% static 'courses/img/courses/info/movil.png' %}" alt="">
+                                <div class="content-char-img">
+                                    <img src="{% static 'courses/img/courses/info/movil.png' %}" alt="">
+                                </div>
                                 <p>Access on mobile devices and TV</p>
                             </div>
                             <div class="content-char">
-                                <img src="{% static 'courses/img/courses/info/homework.png' %}" alt="">
+                                <div class="content-char-img">
+                                  <img src="{% static 'courses/img/courses/info/homework.png' %}" alt="">
+                                </div>
                                 <p>Tasks</p>
                             </div>
                             <div class="content-char">
-                                <img src="{% static 'courses/img/courses/info/trophy.png' %}" alt="">
+                                <div class="content-char-img">
+                                    <img src="{% static 'courses/img/courses/info/trophy.png' %}" alt="">
+                                </div>
                                 <p>Certificate of completion</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
         </div>
     </section>
     <section class="info-learn">
