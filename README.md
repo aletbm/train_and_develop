@@ -13,19 +13,19 @@
 
 ## 💡 Descripción
 
-Plataforma ficticia que brinda cursos en linea por creadores de contenido audiovisual, inspirada en plataformas populares tales como Udemy o Coursera, este proyecto fue llevado adelante para poder trabajar y mejorar mis skills sin intenciones de generar ningun tipo de lucro, la plataforma se ha desarrollado sobre el *framework* Python Django y se hizo uso de la *BBDD* PostgreSQL.
+Plataforma ficticia que brinda cursos en línea por creadores de contenido audiovisual, inspirada en plataformas populares tales como Udemy o Coursera, este proyecto fue llevado adelante para poder trabajar y mejorar mis skills sin intenciones de generar ningún tipo de lucro, la plataforma se ha desarrollado sobre el *framework* Python Django y se hizo uso de la *BBDD* PostgreSQL.
 
 ## 👀 Visitando la plataforma
 
-- Pagina principal: [Home](https://trainanddevelop.herokuapp.com/). Presenta la empresa ficticia, el acceso a algunos cursos gratuitos e informacion que avala el desempeño de la empresa
+- Pagina principal: [Home](https://trainanddevelop.herokuapp.com/)/). Presenta la empresa ficticia, el acceso a algunos cursos gratuitos e información que avala el desempeño de la empresa
 - Cursos: [Courses](https://trainanddevelop.herokuapp.com/courses/). Presenta los cursos disponibles y una seccion que filtra los cursos por categoria.
-- Acerca de nosotros: [About Train&Develop](https://trainanddevelop.herokuapp.com/about_us/). Presenta la vision de la empresa y datos de alcance a nivel mundial.
-- Blog: [Blog](https://trainanddevelop.herokuapp.com/blog/). Presenta noticias de relevacia relacionadas con la empresa y su entorno.
-- Contacto: [Contact](https://trainanddevelop.herokuapp.com/contact/). Presenta las vias de contacto disponibles para el usuario para con la empresa y su ubicacion fisica.
+- Acerca de nosotros: [About Train&Develop](https://trainanddevelop.herokuapp.com/about_us/). Presenta los cursos disponibles y una sección que filtra los cursos por categoría.
+- Blog: [Blog](https://trainanddevelop.herokuapp.com/blog/). Presenta noticias de relevancia relacionadas con la empresa y su entorno.
+- Contacto: [Contact](https://trainanddevelop.herokuapp.com/contact/). Presenta las vías de contacto disponibles para el usuario para con la empresa y su ubicación física.
 
 La plataforma fue hosteada con [Heroku](https://www.heroku.com)
 
-## 📂 Arbol basico del proyecto
+## 📂 Árbol básico del proyecto
 
 + [Train&Develop](https://github.com/aletbm/train_and_develop/tree/master/traindevelop)
     * [Home](https://github.com/aletbm/train_and_develop/tree/master/home)
@@ -45,18 +45,18 @@ La plataforma fue hosteada con [Heroku](https://www.heroku.com)
 
 ## 💻 Lanzar proyecto localmente
 
-### 📋 Pre-requisitos
+### 📋 Prerrequisitos
 
 * El proyecto fue desarrollado sobre [Python v.3.9](https://www.python.org/downloads/release/python-390/) o superiores.
 * Se utilizo el *framework* [Django v.2.1.2](https://www.djangoproject.com/download/) y la *BBDD* [PostgresSQL v.14.2](https://www.postgresql.org/download/)
-* Se utilizaron las siguientes librerias:
+* Se utilizaron las siguientes librerías:
     - [psycopg2 2.9.3](https://pypi.org/project/psycopg2/)
     - [Pillow](https://pypi.org/project/Pillow/)
     - [python-decouple](https://pypi.org/project/python-decouple/)
     - [whitenoise](https://whitenoise.evans.io/en/stable/index.html)
     
 ### 🔧 Instalación
-
+instalacion
 Procedemos a instalar los paquetes:
 
 ```
@@ -67,7 +67,7 @@ pip install python-decouple
 pip install whitenoise
 ```
 
-Ademas se debe instalar el servidor de [PostgresSQL v.14.2](https://www.postgresql.org/download/) desde su pagina.
+Además se debe instalar el servidor de [PostgresSQL v.14.2](https://www.postgresql.org/download/) desde su pagina.
 Para el funcionamiento del mapa en la app de [Contact](https://github.com/aletbm/train_and_develop/tree/master/contact) se ha utilizado [Mapbox](https://www.mapbox.com) deben crearse una cuenta y obtener sus credenciales para acceder al mapa.
 
 ---
@@ -88,7 +88,7 @@ SECRET_KEY=             #Clave secreta de Django
 MAPBOX_ACCESS_TOKEN=    #Token brindada por Mapbox
 ```
 
-Si desea generar una SECRET_KEY puede utilizar el siguiente codigo en python:
+Si desea generar una SECRET_KEY puede utilizar el siguiente código en python:
 
 ```
 import string
@@ -99,15 +99,15 @@ chars = ''.join([string.ascii_letters, string.digits, string.punctuation]).repla
 SECRET_KEY = ''.join([random.SystemRandom().choice(chars) for i in range(50)])
 ```
 
-Por ultimo debe modificar en [settings.py](https://github.com/aletbm/train_and_develop/blob/master/traindevelop/settings.py) la linea 27 por:
+Por ultimo debe modificar en [settings.py](https://github.com/aletbm/train_and_develop/blob/master/traindevelop/settings.py) la línea 27 por:
 
 ```
 DEBUG = True
 ```
 
-### Correr servidor local de Django y visualizacion de web localmente:
+### 🔧 Correr servidor local de Django y visualización de web localmente:
 
-Dentro del directorio raiz del proyecto correr los siguiente comandos:
+Dentro del directorio raíz del proyecto correr los siguiente comandos:
 
 ```
 python manage.py makemigrations
@@ -116,10 +116,10 @@ python manage.py test
 python manage.py runserver
 ```
 
-Si va a correr el proyecto en produccion debe modificar *'DEBUG = True'* y correr *'python manage.py collectstatic --noinput'*
+Si va a correr el proyecto en producción debe modificar *'DEBUG = True'* y correr *'python manage.py collectstatic --noinput'*.
 
-A continuacion abra su navegador de preferencia e ingrese a la siguiente url http://127.0.0.1:8000/ si todo va bien deberia visualizar la pagina principal
+A continuación abra su navegador de preferencia e ingrese a la siguiente url http://127.0.0.1:8000/ si todo va bien debería visualizar la página principal.
 
 ## 📣 Modificaciones futuras
 
-La plataforma aun se encuentra en desarrollo, tengo dos objetivos principales que alcanzar, integrar un sistema de logueo de usuarios y añadir un sistema de e-commerce, considero que estos dos puntos son vitales para concluir con el proyecto
+La plataforma aún se encuentra en desarrollo, tengo dos objetivos principales que alcanzar, integrar un sistema de logueo de usuarios y añadir un sistema de e-commerce, considero que estos dos puntos son vitales para concluir con el proyecto.
