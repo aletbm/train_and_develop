@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
-
+# pip install python-decouple
 import os
 from decouple import config
 
@@ -87,7 +87,7 @@ WSGI_APPLICATION = "traindevelop.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "ENGINE": "django.db.backends.mysql", #"django.db.backends.postgresql_psycopg2",
         "NAME": config("DB_NAME"),
         "USER": config("DB_USER"),
         "PASSWORD": config("DB_USER_PASSWORD"),
@@ -122,7 +122,7 @@ LANGUAGE_CODE = "es-eu"
 TIME_ZONE = "UTC"
 USE_I18N = True
 USE_L10N = True
-USE_TZ = False
+USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
