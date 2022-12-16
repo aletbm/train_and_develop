@@ -23,7 +23,7 @@ Plataforma ficticia que brinda cursos en línea por creadores de contenido audio
 - Blog: [Blog](https://trainanddevelop.herokuapp.com/blog/). Presenta noticias de relevancia relacionadas con la empresa y su entorno.
 - Contacto: [Contact](https://trainanddevelop.herokuapp.com/contact/). Presenta las vías de contacto disponibles para el usuario para con la empresa y su ubicación física.
 
-La plataforma fue hosteada con [Heroku](https://www.heroku.com)
+La plataforma fue hosteada con [PyhtonAnywhere](https://www.pythonanywhere.com)
 
 ## 📂 Árbol básico del proyecto
 
