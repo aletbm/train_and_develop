@@ -50,7 +50,7 @@ La plataforma fue hosteada con [PyhtonAnywhere](https://www.pythonanywhere.com)
 * El proyecto fue desarrollado sobre [Python v.3.9](https://www.python.org/downloads/release/python-390/) o superiores.
 * Se utilizo el *framework* [Django v4.0](https://www.djangoproject.com/download/) y la *BBDD* (~~[PostgresSQL v.14.2](https://www.postgresql.org/download/)~~) -> [MySQL v8.0.31](https://dev.mysql.com/downloads/workbench/)
 * Se utilizaron las siguientes librerías:
-    - (~~[psycopg2 2.9.3](https://pypi.org/project/psycopg2/)~~) -> [pymysql v1.0.2](https://pypi.org/project/PyMySQL/)
+    - (~~[psycopg2 v2.9.3](https://pypi.org/project/psycopg2/)~~) -> [mysqlclient v2.1.1](https://pypi.org/project/mysqlclient/)
     - [Pillow](https://pypi.org/project/Pillow/)
     - [python-decouple](https://pypi.org/project/python-decouple/)
     - [whitenoise](https://whitenoise.evans.io/en/stable/index.html)
@@ -62,7 +62,7 @@ Procedemos a instalar los paquetes:
 
 ```
 pip install Django==4.0
-pip install pymysql==1.0.2
+pip install mysqlclient==2.1.1
 pip install Pillow
 pip install python-decouple
 pip install whitenoise
