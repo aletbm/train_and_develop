@@ -10,6 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 # pip install python-decouple
+# MIGRATE DATABASE:
+# python manage.py makemigrations
+# python manage.py migrate
+# python manage.py loaddata dataSQL.json --exclude contenttypes
+
 import os
 from decouple import config
 
