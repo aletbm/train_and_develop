@@ -4,8 +4,8 @@
 
 <div align="center">
     <img src="https://img.shields.io/badge/Python-%E2%89%A53.9-blue?logo=python&logoColor=white"/>
-    <img src="https://img.shields.io/badge/Django-v2.1.2-0c4b33?logo=django" />
-    <img src="https://img.shields.io/badge/PostgreSQL-v14.2-2F5E8D?logo=postgresql&logoColor=white" />
+    <img src="https://img.shields.io/badge/Django-v4.0-0c4b33?logo=django" />
+    <img src="https://img.shields.io/badge/MySQL-v14.2-2F5E8D?logo=mysql&logoColor=white" />
     <img src="https://img.shields.io/badge/JQuery-v3.6.0-78CFF5?logo=jquery&logoColor=white" />
 </div>
 
@@ -13,11 +13,11 @@
 
 ## 💡 Descripción
 
-Plataforma ficticia que brinda cursos en línea por creadores de contenido audiovisual, inspirada en plataformas populares tales como Udemy o Coursera, este proyecto fue llevado adelante para poder trabajar y mejorar mis skills sin intenciones de generar ningún tipo de lucro, la plataforma se ha desarrollado sobre el *framework* Python Django y se hizo uso de la *BBDD* PostgreSQL.
+Plataforma ficticia que brinda cursos en línea por creadores de contenido audiovisual, inspirada en plataformas populares tales como Udemy o Coursera, este proyecto fue llevado adelante para poder trabajar y mejorar mis skills sin intenciones de generar ningún tipo de lucro, la plataforma se ha desarrollado sobre el *framework* Python Django y se hizo uso de la *BBDD* (~~PostgreSQL~~) -> MySQL.
 
 ## 👀 Visitando la plataforma
 
-- Pagina principal: [Home](https://trainanddevelop.herokuapp.com/)/). Presenta la empresa ficticia, el acceso a algunos cursos gratuitos e información que avala el desempeño de la empresa
+- Pagina principal: [Home](https://trainanddevelop.herokuapp.com/). Presenta la empresa ficticia, el acceso a algunos cursos gratuitos e información que avala el desempeño de la empresa
 - Cursos: [Courses](https://trainanddevelop.herokuapp.com/courses/). Presenta los cursos disponibles y una seccion que filtra los cursos por categoria.
 - Acerca de nosotros: [About Train&Develop](https://trainanddevelop.herokuapp.com/about_us/). Presenta los cursos disponibles y una sección que filtra los cursos por categoría.
 - Blog: [Blog](https://trainanddevelop.herokuapp.com/blog/). Presenta noticias de relevancia relacionadas con la empresa y su entorno.
@@ -48,26 +48,27 @@ La plataforma fue hosteada con [Heroku](https://www.heroku.com)
 ### 📋 Prerrequisitos
 
 * El proyecto fue desarrollado sobre [Python v.3.9](https://www.python.org/downloads/release/python-390/) o superiores.
-* Se utilizo el *framework* [Django v.2.1.2](https://www.djangoproject.com/download/) y la *BBDD* [PostgresSQL v.14.2](https://www.postgresql.org/download/)
+* Se utilizo el *framework* [Django v.2.1.2](https://www.djangoproject.com/download/) y la *BBDD* (~~[PostgresSQL v.14.2](https://www.postgresql.org/download/)~~) -> [MySQL v8.0.31](https://dev.mysql.com/downloads/workbench/)
 * Se utilizaron las siguientes librerías:
-    - [psycopg2 2.9.3](https://pypi.org/project/psycopg2/)
+    - (~~[psycopg2 2.9.3](https://pypi.org/project/psycopg2/)~~) -> [pymysql v1.0.2](https://pypi.org/project/PyMySQL/)
     - [Pillow](https://pypi.org/project/Pillow/)
     - [python-decouple](https://pypi.org/project/python-decouple/)
     - [whitenoise](https://whitenoise.evans.io/en/stable/index.html)
+    
     
 ### 🔧 Instalación
 instalacion
 Procedemos a instalar los paquetes:
 
 ```
-pip install Django==2.1.2
-pip install psycopg2
+pip install Django==4.0
+pip install pymysql==1.0.2
 pip install Pillow
 pip install python-decouple
 pip install whitenoise
 ```
 
-Además se debe instalar el servidor de [PostgresSQL v.14.2](https://www.postgresql.org/download/) desde su pagina.
+Además se debe instalar el servidor de (~~[PostgresSQL v.14.2](https://www.postgresql.org/download/)~~) -> [MySQL v8.0.31](https://dev.mysql.com/downloads/workbench/) desde su pagina.
 Para el funcionamiento del mapa en la app de [Contact](https://github.com/aletbm/train_and_develop/tree/master/contact) se ha utilizado [Mapbox](https://www.mapbox.com) deben crearse una cuenta y obtener sus credenciales para acceder al mapa.
 
 ---
