@@ -48,7 +48,7 @@ La plataforma fue hosteada con [Heroku](https://www.heroku.com)
 ### 📋 Prerrequisitos
 
 * El proyecto fue desarrollado sobre [Python v.3.9](https://www.python.org/downloads/release/python-390/) o superiores.
-* Se utilizo el *framework* [Django v.2.1.2](https://www.djangoproject.com/download/) y la *BBDD* (~~[PostgresSQL v.14.2](https://www.postgresql.org/download/)~~) -> [MySQL v8.0.31](https://dev.mysql.com/downloads/workbench/)
+* Se utilizo el *framework* [Django v4.0](https://www.djangoproject.com/download/) y la *BBDD* (~~[PostgresSQL v.14.2](https://www.postgresql.org/download/)~~) -> [MySQL v8.0.31](https://dev.mysql.com/downloads/workbench/)
 * Se utilizaron las siguientes librerías:
     - (~~[psycopg2 2.9.3](https://pypi.org/project/psycopg2/)~~) -> [pymysql v1.0.2](https://pypi.org/project/PyMySQL/)
     - [Pillow](https://pypi.org/project/Pillow/)
