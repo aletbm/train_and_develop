@@ -1,5 +1,5 @@
-Django==2.1.2
-psycopg2
+Django==4.0
+pymysql==1.0.2
 gunicorn
 python-decouple
 whitenoise
